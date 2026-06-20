@@ -1,0 +1,183 @@
+<section id="contact" class="contact-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-title-container">
+      <span class="text-gradient-primary" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem; display: block;">Contact</span>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Let's discuss how we can leverage low-code solutions, modern integrations, and automations to optimize your business operations.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Left Column: Contact Info Details -->
+      <div class="contact-info-col">
+        <p class="info-lead">
+          Have an automation project in mind or need assistance with your existing Microsoft 365 environment? Fill out the form or reach out directly.
+        </p>
+
+        <div class="info-cards-list">
+          <!-- Email Info Card -->
+          <div class="glass-card info-item-card">
+            <div class="info-icon-box">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="info-details">
+              <span class="info-label">Email Me</span>
+              <a href="mailto:ranaansshahzad@gmail.com" class="info-value">ranaansshahzad&#64;gmail.com</a>
+            </div>
+          </div>
+
+          <!-- Phone Info Card -->
+          <div class="glass-card info-item-card">
+            <div class="info-icon-box">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="info-details">
+              <span class="info-label">Call Me</span>
+              <a href="tel:+923364554420" class="info-value">+92 336 4554420</a>
+            </div>
+          </div>
+
+          <!-- Location Info Card -->
+          <div class="glass-card info-item-card">
+            <div class="info-icon-box">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="info-details">
+              <span class="info-label">Location</span>
+              <span class="info-value">Lahore, Punjab, Pakistan</span>
+            </div>
+          </div>
+
+          <!-- Availability Info Card -->
+          <div class="glass-card info-item-card">
+            <div class="info-icon-box">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="info-details">
+              <span class="info-label">Availability</span>
+              <span class="info-value">Open for Contracts & Consulting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Form Area -->
+      <div class="contact-form-col">
+        @if (!isSubmitted()) {
+          <div class="glass-card contact-form-card">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+              <!-- Name Input -->
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  id="name" 
+                  formControlName="name" 
+                  class="form-input" 
+                  placeholder="Your Name"
+                  required
+                >
+                <label for="name" class="form-label">Your Name</label>
+                @if (contactForm.get('name')?.touched && contactForm.get('name')?.invalid) {
+                  <span class="error-msg">Please enter your name (min 2 characters).</span>
+                }
+              </div>
+
+              <!-- Email Input -->
+              <div class="form-group">
+                <input 
+                  type="email" 
+                  id="email" 
+                  formControlName="email" 
+                  class="form-input" 
+                  placeholder="Your Email"
+                  required
+                >
+                <label for="email" class="form-label">Your Email</label>
+                @if (contactForm.get('email')?.touched && contactForm.get('email')?.invalid) {
+                  <span class="error-msg">Please enter a valid email address.</span>
+                }
+              </div>
+
+              <!-- Subject Input -->
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  id="subject" 
+                  formControlName="subject" 
+                  class="form-input" 
+                  placeholder="Subject"
+                  required
+                >
+                <label for="subject" class="form-label">Subject</label>
+                @if (contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid) {
+                  <span class="error-msg">Please enter a subject (min 4 characters).</span>
+                }
+              </div>
+
+              <!-- Message Input -->
+              <div class="form-group">
+                <textarea 
+                  id="message" 
+                  formControlName="message" 
+                  class="form-input" 
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+                <label for="message" class="form-label">Your Message</label>
+                @if (contactForm.get('message')?.touched && contactForm.get('message')?.invalid) {
+                  <span class="error-msg">Please write a message of at least 10 characters.</span>
+                }
+              </div>
+
+              <!-- Submit button -->
+              <button 
+                type="submit" 
+                class="submit-btn" 
+                [disabled]="isSending() || contactForm.invalid"
+              >
+                @if (isSending()) {
+                  <div class="spinner"></div>
+                  <span>Sending Message...</span>
+                } @else {
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  <span>Send Message</span>
+                }
+              </button>
+            </form>
+          </div>
+        } @else {
+          <!-- Success State Display -->
+          <div class="glass-card success-card">
+            <div class="success-icon-wrapper">
+              <svg viewBox="0 0 52 52" class="checkmark-svg">
+                <circle cx="26" cy="26" r="25" fill="none" stroke="#10b981" stroke-width="3" />
+                <path class="checkmark-path" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+              </svg>
+            </div>
+            <h3 class="success-title">Message Sent!</h3>
+            <p class="success-desc">
+              Thank you for reaching out. I have received your email and will respond to you within 24 hours.
+            </p>
+            <button class="btn btn-secondary" (click)="resetForm()">
+              Send Another Message
+            </button>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

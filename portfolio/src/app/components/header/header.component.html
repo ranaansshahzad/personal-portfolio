@@ -1,0 +1,79 @@
+<header class="header" [class.scrolled]="isScrolled()">
+  <div class="container header-container">
+    <!-- Brand Logo -->
+    <div class="logo-container" (click)="scrollToSection('hero', $event)">
+      <div class="ms-logo">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span class="logo-text">Ans Shahzad</span>
+    </div>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="desktop-nav">
+      @for (item of navItems; track item.id) {
+        <a 
+          href="#" 
+          class="nav-link" 
+          [class.active]="activeSection() === item.id"
+          (click)="scrollToSection(item.id, $event)"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="nav-actions">
+      <!-- Dark/Light Theme Toggle -->
+      <button 
+        class="theme-toggle-btn" 
+        (click)="themeService.toggleTheme()" 
+        [attr.aria-label]="themeService.theme() === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+      >
+        @if (themeService.theme() === 'dark') {
+          <!-- Sun Icon for switching to light -->
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+        } @else {
+          <!-- Moon Icon for switching to dark -->
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        }
+      </button>
+
+      <!-- Hamburger Menu for Mobile -->
+      <button 
+        class="mobile-menu-toggle" 
+        [class.open]="isMobileMenuOpen()" 
+        (click)="toggleMobileMenu()"
+        aria-label="Toggle Mobile Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer Overlay -->
+<div class="mobile-nav-overlay" [class.open]="isMobileMenuOpen()">
+  <nav class="mobile-nav-list">
+    @for (item of navItems; track item.id) {
+      <a 
+        href="#" 
+        class="mobile-nav-link" 
+        [class.active]="activeSection() === item.id"
+        (click)="scrollToSection(item.id, $event)"
+      >
+        {{ item.label }}
+      </a>
+    }
+  </nav>
+</div>

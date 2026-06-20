@@ -1,0 +1,26 @@
+<footer class="footer">
+  <div class="container footer-container">
+    <!-- Copyright Label -->
+    <span class="footer-text">
+      &copy; {{ currentYear }} Rana Ans Shahzad. All rights reserved.
+    </span>
+
+    <!-- Social Links Row -->
+    <div class="footer-links">
+      <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+      <a href="https://github.com" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+      <a href="mailto:ranaansshahzad@example.com" class="footer-link">Email</a>
+    </div>
+
+    <!-- Scroll Back to Top Button -->
+    <button 
+      class="scroll-top-btn" 
+      (click)="scrollToTop($event)" 
+      aria-label="Scroll to top of page"
+    >
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+  </div>
+</footer>

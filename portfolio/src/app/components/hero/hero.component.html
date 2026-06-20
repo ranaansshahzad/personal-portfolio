@@ -1,0 +1,118 @@
+<section id="hero" class="hero-section" #heroSection>
+  <!-- Background glow animations -->
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+
+  <div class="container hero-grid">
+    <!-- Left Column: Content -->
+    <div class="hero-content">
+      <span class="greeting">Welcome to my space</span>
+      <h1 class="hero-title" #headline>Hi, I'm Rana Ans Shahzad</h1>
+      
+      <div class="typing-wrapper">
+        <span>Specialized in&nbsp;</span>
+        <span class="typed-text">{{ typedText() }}</span>
+        <span class="cursor"></span>
+      </div>
+
+      <p class="hero-description" #subheadline>
+        Dynamics 365 CRM & Microsoft Power Platform Consultant with over 5 years of experience designing, developing, and implementing enterprise applications. Specializing in Power Apps (Model-Driven & Canvas), Power Automate, Power Pages, SharePoint Online, Dataverse, and SQL Server.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="hero-ctas" #ctaButtons>
+        <a href="#contact" class="btn btn-primary" (click)="scrollToContact()">
+          Contact Me
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </a>
+        <a href="https://linktr.ee/RanaAnsShahzad" target="_blank" rel="noopener" class="btn btn-secondary">
+          View Linktree
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Social Connections -->
+      <div class="hero-socials" #socials>
+        <span class="social-label">Connect:</span>
+        <a href="https://www.linkedin.com/in/rana-ans-shahzad-%E2%9C%AA-226818162/" target="_blank" rel="noopener" class="social-icon linkedin-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a href="https://github.com/ranaansshahzad" target="_blank" rel="noopener" class="social-icon github-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="mailto:ranaansshahzad@gmail.com" class="social-icon email-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Visual Component -->
+    <div class="hero-visual" #visualContainer>
+      <!-- Decorative Background shapes -->
+      <div class="decor-shape shape-1"></div>
+      <div class="decor-shape shape-2"></div>
+
+      <!-- Avatar Container -->
+      <div class="profile-card-wrapper">
+        <div class="profile-avatar-container">
+          <span class="profile-initials">AS</span>
+        </div>
+      </div>
+
+      <!-- Floating Microsoft Badges -->
+      <div class="floating-widget float-element-1">
+        <div class="widget-icon">
+          <!-- Power Apps Icon Similary -->
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="widget-info">
+          <span class="widget-title">Power Apps</span>
+          <span class="widget-value">Canvas & Model-Driven</span>
+        </div>
+      </div>
+
+      <div class="floating-widget float-element-2">
+        <div class="widget-icon">
+          <!-- Power Automate Link Similary -->
+          <svg viewBox="0 0 24 24">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </div>
+        <div class="widget-info">
+          <span class="widget-title">Power Automate</span>
+          <span class="widget-value">Enterprise Automations</span>
+        </div>
+      </div>
+
+      <div class="floating-widget float-element-3">
+        <div class="widget-icon">
+          <!-- Copilot Studio Chat Similary -->
+          <svg viewBox="0 0 24 24">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <div class="widget-info">
+          <span class="widget-title">Copilot Studio</span>
+          <span class="widget-value">AI Copilots & Bots</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

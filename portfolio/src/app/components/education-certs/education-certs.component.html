@@ -1,0 +1,97 @@
+<section id="education" class="edu-certs-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-title-container">
+      <span class="text-gradient-primary" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem; display: block;">Credentials</span>
+      <h2 class="section-title">Education & Credentials</h2>
+      <p class="section-subtitle">Academic foundations, Microsoft certifications, and cloud ecosystem research publications.</p>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="edu-certs-grid">
+      <!-- Left Column: Education & Publications -->
+      <div class="edu-col">
+        <!-- Education Subsection -->
+        <div>
+          <h3 class="sub-title">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            Education
+          </h3>
+          
+          @for (edu of educationList; track edu.degree) {
+            <div class="glass-card edu-card">
+              <h4 class="edu-degree">{{ edu.degree }}</h4>
+              <div class="edu-inst">{{ edu.institution }}</div>
+              <div class="edu-meta">
+                <span class="edu-period">{{ edu.period }}</span>
+                <span class="edu-loc">{{ edu.location }}</span>
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Publications Subsection -->
+        <div>
+          <h3 class="sub-title">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Publications & Research
+          </h3>
+
+          <div class="glass-card pub-card">
+            <div class="pub-header">
+              <h4 class="pub-title">{{ publication.title }}</h4>
+              <a [href]="publication.link" target="_blank" rel="noopener" class="pub-link-btn" aria-label="Open Publication PDF">
+                <svg viewBox="0 0 24 24">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+            <span class="pub-journal">{{ publication.publisher }}</span>
+            <p class="pub-desc">{{ publication.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Certifications -->
+      <div class="edu-col">
+        <div>
+          <h3 class="sub-title">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+            Certifications
+          </h3>
+
+          <div class="certs-list">
+            @for (cert of certifications; track cert.title) {
+              <div class="glass-card cert-item">
+                <div class="cert-icon-box">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div class="cert-info">
+                  <h4 class="cert-title">{{ cert.title }}</h4>
+                  <span class="cert-issuer">{{ cert.issuer }}</span>
+                </div>
+                <span class="cert-date">{{ cert.date }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

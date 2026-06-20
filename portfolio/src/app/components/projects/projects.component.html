@@ -1,0 +1,61 @@
+<section id="projects" class="projects-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-title-container">
+      <span class="text-gradient-primary" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem; display: block;">Portfolio</span>
+      <h2 class="section-title">Enterprise Solutions</h2>
+      <p class="section-subtitle">A showcase of low-code architectures, complex automated pipelines, and cloud platform dashboards that solve real-world problems.</p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      @for (proj of projects; track proj.title) {
+        <div class="project-card-container">
+          <div 
+            #card 
+            class="project-card"
+            (mousemove)="onMouseMove($event, card)"
+            (mouseleave)="onMouseLeave(card)"
+          >
+            <!-- Platform Header -->
+            <div class="project-header">
+              <span class="project-platform">{{ proj.platform }}</span>
+              <span class="project-role-tag">{{ proj.role }}</span>
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="project-title">{{ proj.title }}</h3>
+            <p class="project-desc">{{ proj.description }}</p>
+
+            <!-- Bottom Tech Tags & Actions -->
+            <div class="project-footer">
+              <div class="project-tags">
+                @for (t of proj.tech; track t) {
+                  <span class="tech-tag">{{ t }}</span>
+                }
+              </div>
+
+              <div class="project-actions">
+                <a href="#" class="action-link" onclick="return false;">
+                  <span>Case Study</span>
+                  <svg viewBox="0 0 24 24">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+                <a href="#" class="action-link" onclick="return false;">
+                  <span>Live Demo</span>
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

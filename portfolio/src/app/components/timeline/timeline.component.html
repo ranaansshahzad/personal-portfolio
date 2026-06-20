@@ -1,0 +1,79 @@
+<section id="experience" class="timeline-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-title-container">
+      <span class="text-gradient-primary" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem; display: block;">Journey</span>
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-subtitle">A timeline of my professional career, focusing on business process optimization and consultant roles.</p>
+    </div>
+
+    <!-- Timeline Wrapper -->
+    <div class="timeline-main-container">
+      <!-- Background Track Line -->
+      <div class="timeline-line">
+        <div class="timeline-progress-line"></div>
+      </div>
+
+      <!-- Experience Items -->
+      @for (exp of experiences; track exp.company; let idx = $index) {
+        <div class="timeline-item">
+          @if (idx % 2 === 0) {
+            <!-- Left Card / Right Spacer for Even Index -->
+            <div class="timeline-col">
+              <div class="glass-card timeline-card">
+                <h3 class="role-title">{{ exp.role }}</h3>
+                <div class="company-info">
+                  <span class="company-name">{{ exp.company }}</span>
+                  <span class="period-badge">{{ exp.period }}</span>
+                </div>
+                <ul class="duty-list">
+                  @for (desc of exp.description; track desc) {
+                    <li>{{ desc }}</li>
+                  }
+                </ul>
+                <div class="card-tags">
+                  @for (tag of exp.tags; track tag) {
+                    <span class="tag-pill">{{ tag }}</span>
+                  }
+                </div>
+              </div>
+            </div>
+            
+            <div class="timeline-marker-container">
+              <div class="timeline-marker"></div>
+            </div>
+            
+            <div class="timeline-spacer"></div>
+          } @else {
+            <!-- Left Spacer / Right Card for Odd Index -->
+            <div class="timeline-spacer"></div>
+            
+            <div class="timeline-marker-container">
+              <div class="timeline-marker"></div>
+            </div>
+            
+            <div class="timeline-col">
+              <div class="glass-card timeline-card">
+                <h3 class="role-title">{{ exp.role }}</h3>
+                <div class="company-info">
+                  <span class="company-name">{{ exp.company }}</span>
+                  <span class="period-badge">{{ exp.period }}</span>
+                </div>
+                <ul class="duty-list">
+                  @for (desc of exp.description; track desc) {
+                    <li>{{ desc }}</li>
+                  }
+                </ul>
+                <div class="card-tags">
+                  @for (tag of exp.tags; track tag) {
+                    <span class="tag-pill">{{ tag }}</span>
+                  }
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>
